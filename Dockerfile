@@ -39,12 +39,16 @@ ENV PATH="/app/.venv/bin:$PATH" \
 # Create directory for token storage
 RUN mkdir -p /app/.strava_tokens
 
-# Expose MCP server
-# The server runs via stdio, so no port exposure needed
+# Expose HTTP port
+EXPOSE 8000
 
-# Health check (optional - checks if Python and dependencies are available)
+# Bind to all interfaces for Railway
+ENV STRAVA_MCP_HOST=0.0.0.0
+ENV STRAVA_MCP_PORT=8000
+
+# Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD python -c "import strava_mcp; print('ok')" || exit 1
 
-# Run the MCP server
-ENTRYPOINT ["python", "-m", "strava_mcp.server"]
+# Run the MCP server in HTTP mode
+ENTRYPOINT ["python", "-m", "strava_mcp.server", "--transport", "http"]

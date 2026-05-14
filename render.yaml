@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: strava-mcp
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: STRAVA_CLIENT_ID
+        sync: false
+      - key: STRAVA_CLIENT_SECRET
+        sync: false
+      - key: STRAVA_MCP_BASE_URL
+        sync: false
+      - key: STRAVA_MCP_HOST
+        value: "0.0.0.0"
+      - key: STRAVA_MCP_PORT
+        value: "8000"

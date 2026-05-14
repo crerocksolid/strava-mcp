@@ -4,7 +4,7 @@
 
 1. Go to https://www.strava.com/settings/api
 2. Create a new application (or use existing)
-3. Set the **Authorization Callback Domain** to: `strava-mcp.onrender.com`
+3. Set the **Authorization Callback Domain** to: `strava-mcp-kxpq.onrender.com`
    (Update after first deploy if your Render URL differs)
 4. Copy the **Client ID** and **Client Secret**
 
@@ -31,7 +31,7 @@
 ```
 STRAVA_CLIENT_ID=<from step 1>
 STRAVA_CLIENT_SECRET=<from step 1>
-STRAVA_MCP_BASE_URL=https://strava-mcp.onrender.com
+STRAVA_MCP_BASE_URL=https://strava-mcp-kxpq.onrender.com
 STRAVA_MCP_HOST=0.0.0.0
 STRAVA_MCP_PORT=8000
 ```
@@ -40,14 +40,14 @@ STRAVA_MCP_PORT=8000
 
 Go back to https://www.strava.com/settings/api and set the Authorization Callback Domain to your Render domain (no https://, just the domain):
 ```
-strava-mcp.onrender.com
+strava-mcp-kxpq.onrender.com
 ```
 
 ## 5. Add to Claude.ai
 
 The MCP URL to paste into Claude.ai → Settings → Connectors → Add custom connector:
 ```
-https://strava-mcp.onrender.com/mcp
+https://strava-mcp-kxpq.onrender.com/mcp
 ```
 
 ## Available Tools

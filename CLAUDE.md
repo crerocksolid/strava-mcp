@@ -1,3 +1,5 @@
+> **Watchtower note:** this checkout is reference only — the deployed copy lives at ~/ai-os/services/strava_mcp (docker `ai-os-strava-mcp-1`, host port 8975). Make production changes there via the ai-os stack.
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
